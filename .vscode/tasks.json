@@ -1,0 +1,71 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Stack: up",
+      "type": "shell",
+      "command": "docker compose up -d --build",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Stack: down",
+      "type": "shell",
+      "command": "docker compose down",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Stack: logs",
+      "type": "shell",
+      "command": "docker compose logs -f",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Web Clipper",
+      "type": "shell",
+      "command": "cd clipper_app && source .venv/bin/activate && python web_clipper.py",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Desktop Clipper (Tkinter)",
+      "type": "shell",
+      "command": "cd clipper_app && source .venv/bin/activate && python clipper.py",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "API Health Check",
+      "type": "shell",
+      "command": "curl http://localhost:8081/healthz",
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: Local Dev",
+      "type": "shell",
+      "command": "cd frontend && npm run dev",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
