@@ -1,3 +1,12 @@
+# 🔖 LIFE_DB — All-in-One v4
+
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
+[![Python](https://img.shields.io/badge/Python-3.9+-green.svg)](https://www.python.org/)
+[![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+**Personal knowledge management system met full-text search, graph visualization en smart clipping.**
+
 # LIFE_DB — All-in-One (Windsurf) v4 (Quick Wins)
 
 **Nieuw in v4 (quick wins):**
