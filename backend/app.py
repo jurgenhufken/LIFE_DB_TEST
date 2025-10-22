@@ -188,7 +188,9 @@ async def capture(body: CaptureBody, _=Depends(require_bearer)):
 
 @app.get("/items")
 def list_items(q: Optional[str]=None, domain: Optional[str]=None, category: Optional[str]=None, limit: int=20, offset:int=0):
-    base = "SELECT i.id,i.url,i.title,i.description,i.domain,i.created_at,i.category FROM items i"
+    base = """SELECT i.id,i.url,i.title,i.description,i.domain,i.created_at,i.category,
+                     COALESCE(m.meta_json::json->'meta'->>'og:image', '') as og_image
+              FROM items i LEFT JOIN item_meta m ON m.item_id = i.id"""
     where = []; params = {}
     if domain: where.append("i.domain=:domain"); params["domain"]=domain
     if category: where.append("i.category=:cat"); params["cat"]=category
@@ -199,7 +201,7 @@ def list_items(q: Optional[str]=None, domain: Optional[str]=None, category: Opti
     params["lim"]=limit; params["off"]=offset
     with engine.begin() as conn:
         rows = conn.execute(text(sql), params).all()
-    out = [{"id":r[0],"url":r[1],"title":r[2],"description":r[3],"domain":r[4],"created_at":str(r[5]),"category":r[6]} for r in rows]
+    out = [{"id":r[0],"url":r[1],"title":r[2],"description":r[3],"domain":r[4],"created_at":str(r[5]),"category":r[6],"og_image":r[7] or ""} for r in rows]
     return {"items": out}
 
 @app.get("/items/{item_id}/meta")
