@@ -32,6 +32,16 @@
       }
     },
     {
+      "label": "Expandable Clipper",
+      "type": "shell",
+      "command": "cd clipper_app && source .venv/bin/activate && python expandable_clipper.py",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
       "label": "Web Clipper",
       "type": "shell",
       "command": "cd clipper_app && source .venv/bin/activate && python web_clipper.py",

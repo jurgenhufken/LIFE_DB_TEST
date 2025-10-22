@@ -35,21 +35,19 @@ curl http://localhost:8081/healthz  # Should return {"ok":true}
 
 ### 2. Start Clipper
 
-**Web Clipper (aanbevolen - werkt altijd):**
+**Expandable Clipper (aanbevolen - modern UI):**
 ```bash
 cd clipper_app
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python web_clipper.py
-# Opens http://localhost:8888
+python expandable_clipper.py
+# Opens floating window with expand/collapse
 ```
 
-**Desktop Clipper (Tkinter - optioneel):**
-```bash
-python clipper.py
-# Opens Tk window (als Tkinter werkt)
-```
+**Alternatieven:**
+- `python web_clipper.py` - Web-based op http://localhost:8888
+- `python clipper.py` - Original Tkinter (als het werkt)
 
 ### 3. Gebruik Windsurf Tasks
 

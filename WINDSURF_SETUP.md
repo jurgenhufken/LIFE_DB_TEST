@@ -30,16 +30,22 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-**Optie A: Web Clipper (werkt altijd)**
+**Optie A: Expandable Clipper (aanbevolen - modern UI)**
 ```bash
-python web_clipper.py
-# Opens http://localhost:8888 in browser
+python expandable_clipper.py
+# Opens floating window with expand/collapse
 ```
 
-**Optie B: Desktop Clipper (Tkinter - als het werkt)**
+**Optie B: Web Clipper (browser-based)**
+```bash
+python web_clipper.py
+# Opens http://localhost:8888
+```
+
+**Optie C: Desktop Clipper (original Tkinter)**
 ```bash
 python clipper.py
-# Opens Tk window
+# Opens Tk window (als het werkt)
 ```
 
 > **Note:** Als Tkinter niet werkt (macOS versie issues), gebruik de Web Clipper.
